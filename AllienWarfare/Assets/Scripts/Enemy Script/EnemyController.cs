@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     
     public AIPath aipath;
 
-    public float speed = 200f;
+    public float speed = 2000f;
     public float nextWaypointDistance = 3f;
 
     Path path;
@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
         
 
 
-        Idle();
+        //Idle();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
     
     void FixedUpdate()
     {
-        Idle();
+        //Idle();
 
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
 
@@ -76,7 +76,7 @@ public class EnemyController : MonoBehaviour
                 //face the target
                 
                 FaceTarget();
-                Attack();
+               // Attack();
 
             }
 
@@ -101,7 +101,7 @@ public class EnemyController : MonoBehaviour
                 currentWaypoint++;
             }
         }
-        /*if (distanceToTarget <= lookRadius)
+        if (distanceToTarget <= lookRadius)
         {
 
             Debug.Log("Distance to target " + distanceToTarget + " stopping " + agent.stoppingDistance);
@@ -111,20 +111,20 @@ public class EnemyController : MonoBehaviour
                 
                 //attack the target
                 //face the target
-                FaceTarget();
-                Attack();
+                //FaceTarget();
+                //Attack();
 
             }
             else
             {
                 if (path == null)
                     return;
-                Run();
+               
             }
         }
-        */else
+        else
         {
-            Idle();
+            //Idle();
         }
         
     }
