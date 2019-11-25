@@ -9,6 +9,9 @@ public class EnemyAI : MonoBehaviour
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
+    public float attackingDistance = 2f;
+
+    public Animator animator;
 
     Path path;
     int currentWaypoint = 0;
@@ -64,12 +67,18 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = ((Vector3)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector3 force = direction * speed * Time.deltaTime;
 
-        if (distanceToTarget <= lookRadius)
+        Debug.Log(distanceToTarget + " " + attackingDistance);
+        if (distanceToTarget <= lookRadius && distanceToTarget >= attackingDistance)
         {
             FaceTarget(); 
             rb.AddForce(force);
+            Run();
+
         }
-        
+        if (distanceToTarget < attackingDistance)
+        {
+            Attack();
+        }
 
         
         float distance = Vector3.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -92,5 +101,33 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+    public void Run()
+    {
+        animator.SetBool("Running", true);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Attacking", false);
+    }
+
+    public void Attack()
+    {
+        animator.SetBool("Running", false);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Attacking", true);
+    }
+
+    public void Idle()
+    {
+        animator.SetBool("Running", false);
+        animator.SetBool("Idle", true);
+        animator.SetBool("Attacking", false);
+        animator.SetBool("Hit", false);
+    }
+
+    public void getHit()
+    {
+        animator.SetBool("Hit", true);
+        Invoke("Idle", 0.3f);
     }
 }
