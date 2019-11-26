@@ -51,8 +51,8 @@ public class PlayerShoot : MonoBehaviour
             if (hit.collider.CompareTag("Enemy"))
             {
 
-                EnemyController enemyContr = hit.transform.GetComponent<EnemyController>();
-                enemyContr.getHit();
+                EnemyAI enemyAI = hit.transform.GetComponent<EnemyAI>();
+                enemyAI.getHit();
                 CharacterStats charStats = hit.transform.GetComponent<CharacterStats>();
                 charStats.TakeDamage(weapon.damage);
                 Debug.Log(hit.transform.name + " took " + weapon.damage);

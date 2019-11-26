@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = ((Vector3)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector3 force = direction * speed * Time.deltaTime;
 
-        Debug.Log(distanceToTarget + " " + attackingDistance);
+
         if (distanceToTarget <= lookRadius && distanceToTarget >= attackingDistance)
         {
             FaceTarget(); 
@@ -80,7 +81,6 @@ public class EnemyAI : MonoBehaviour
             Attack();
         }
 
-        
         float distance = Vector3.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWayPointDistance)
@@ -108,6 +108,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("Running", true);
         animator.SetBool("Idle", false);
         animator.SetBool("Attacking", false);
+        speed = 200f;
     }
 
     public void Attack()
@@ -127,7 +128,11 @@ public class EnemyAI : MonoBehaviour
 
     public void getHit()
     {
+        Debug.Log("Got hit");
         animator.SetBool("Hit", true);
         Invoke("Idle", 0.3f);
+        lookRadius = 200f;
     }
+
+  
 }
