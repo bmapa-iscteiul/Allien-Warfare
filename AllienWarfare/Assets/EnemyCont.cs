@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyCont : MonoBehaviour
 {
-    // Start is called before the first frame update
+    EnemyAI enemyAI;
     void Start()
     {
-        
+        enemyAI = GetComponent<EnemyAI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        enemyAI.
     }
 }
