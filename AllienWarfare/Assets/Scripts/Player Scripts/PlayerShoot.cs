@@ -7,6 +7,7 @@ public class PlayerShoot : MonoBehaviour
     //public ParticleSystem ps;
     //public GameObject impactEffect;
 
+    public ParticleSystem ps;
     public float nextTimeToFire = 0f;
 
     [SerializeField]
@@ -18,6 +19,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+ 
         if (cam == null)
         {
             Debug.LogError("PlayerShoot: Camera not assigned");
@@ -43,6 +45,9 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot() 
     {
+        // Efeito do disparo
+        ps.Play();
+
         RaycastHit hit;
         ///if we hit something
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask))
