@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     public Animator anim;
-    public string name = "Aniquilator300R";
+    public string weaponName = "Aniquilator300R";
 
     public float damage = 10f;
     public float range = 300f;

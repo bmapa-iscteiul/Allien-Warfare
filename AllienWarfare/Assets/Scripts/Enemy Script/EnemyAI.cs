@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     public float attackingDistance = 2f;
 
     public Animator animator;
+    public GameObject m_RightFist;
 
     Path path;
     int currentWaypoint = 0;
@@ -113,9 +114,9 @@ public class EnemyAI : MonoBehaviour
 
     public void Attack()
     {
-        animator.SetBool("Running", false);
-        animator.SetBool("Idle", false);
-        animator.SetBool("Attacking", true);
+        animator.SetTrigger("Attack");
+        rb.velocity = Vector3.zero;
+        speed = 0f;
     }
 
     public void Idle()
@@ -134,5 +135,13 @@ public class EnemyAI : MonoBehaviour
         lookRadius = 200f;
     }
 
-  
+    public void activateFist() {
+
+        m_RightFist.GetComponent<Collider>().enabled = true;
+    }
+
+    public void deactivateFist() {
+
+        m_RightFist.GetComponent<Collider>().enabled = false;
+    }
 }

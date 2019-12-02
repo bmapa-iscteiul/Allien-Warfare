@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float mouseSensitivity = 3f;
 
+    public CharacterStats cs;
     //[SerializeField]
     //private float thrusterForce = 1000f;
 
@@ -46,4 +47,15 @@ public class PlayerController : MonoBehaviour
         // Aplicar a rotação
         motor.RotateCamera(rotationX);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyFist")
+        {
+            cs = GetComponent<CharacterStats>();
+            cs.TakeDamage(10);
+            
+        }
+    }
+
 }
