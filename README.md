@@ -1,73 +1,15 @@
 # Allien-Warfare
-FPS single player game
-
-Created by Bruno and Daniela
-
-DECISOES
-
-- Fazer nascer monstros de min em min até 10 mins
--  
+Allien-Warfare Ã© um jogo Single Player do estilo FPS desenvolvido usando Unity. Este jogo usa o modo de nÃ­veis, em que Ã© necessÃ¡rio apanhar pistas de forma a decifrar o cÃ³digo de cada nÃ­vel.
 
 TODO
-
-- Menu inicial (Start game , Options, Help)
-- Texto com objetivos do jogo + tutorial teclas
-- Fechar portas atrás do player após inicio
-- Monstro a atacar o player
-- Monstro a morrer
-- Player a morrer
-- Player a disparar
-- Vida (ataque normal, ataque venenoso) 
+- Inimigos - ataque venenoso
 - Tempo max 15mins
-- Abrir pistas
-- Código 4 nrs , animação
-- Colorir salas (QUATRO!)e adicionar nr em cada uma (Cor - Numero)
-- Apresentar pistas coletadas ao encontrar
-- Mostrar pistas já encontradas
-- Balas no ecrã
-- Descontar balas
-- VAIVEM:
-	1 - Espaço para player meter codigo
-	2 - Dar max de 3 tentativas
-	3 - Mostrar cod certo => Abrir porta
-	4 - Cod errado => Lose
-	5 - Meter o player a entrar lá dentro
-
-
-- Opcao pausar o jogo
-- Opcao reniciar o jogo
-
-
-
 
 
 EXTRAS 
-- Melhoramento de arma à medida que mata montros dependendo ou do score ou do nr de monstros mortos
+- Melhoramento de arma Ã  medida que mata montros dependendo ou do score ou do nr de monstros mortos
+- Ao atingir X score, revelar 1 nr do cÃ³digo ou posiÃ§Ã£o de uma nota.
+- Sala secreta ( Novas armas | pc com posiÃ§Ã£o das pistas | heal package )
+- Armadilha em q monstros todos iam atÃ© ao player
 
-- Ao atingir X score, revelar 1 nr do código ou posição de uma nota.
-
-- Sala secreta ( Novas armas | pc com posição das pistas | heal package )
-
-- Armadilha em q monstros todos iam até ao player
-
-
-
-
-
-
--
-
-- Adicionar efeito de impacto de bala
-- Corrigir número de disparos por segundo
-- MELHORAR  Meter enemy a atacar o player
-- Tentar meter mapa no projeto
-- Criar notas
-- Criar main menu
-- Criar codigo
- 
-
-DISPLAY
-
-- Vida
-- Nome arma + balas
-- nr Notas coletadas?
+Criado por Bruno Pereira e Daniela Correia.
