@@ -12,4 +12,7 @@ EXTRAS
 - Sala secreta ( Novas armas | pc com posição das pistas | heal package )
 - Armadilha em q monstros todos iam até ao player
 
-Criado por Bruno Pereira e Daniela Correia.
+Criado por
+# Bruno Pereira
+e 
+# Daniela Correia.
